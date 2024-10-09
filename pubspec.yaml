@@ -1,0 +1,37 @@
+name: oracle_test
+description: "A new Flutter project."
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.5.1
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_hooks: ^0.18.0
+  dio: ^5.0.0
+  freezed_annotation: ^2.0.0
+  json_annotation: ^4.0.1
+  shared_preferences: ^2.0.12
+  hooks_riverpod: ^2.2.0
+
+dev_dependencies:
+  build_runner: ^2.0.0
+  json_serializable: ^6.0.0
+  freezed: ^2.0.0
+  riverpod_generator: ^1.0.0
+
+
+  flutter_lints: ^4.0.0
+
+
+flutter:
+
+  uses-material-design: true
+
+  assets:
+    - assets/images/
+
+
