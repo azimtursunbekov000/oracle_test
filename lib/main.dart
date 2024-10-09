@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_localizations/flutter_localizations.dart'; // Добавьте этот импорт
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:oracle_test/feature/cities/presentation/screens/cities_screen.dart';
+
+import 'internal/utils/localization/generated/l10n.dart';
 
 void main() {
   runApp(
@@ -15,10 +18,17 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
+      localizationsDelegates: const [
+        S.delegate,
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+      ],
+      supportedLocales: S.delegate.supportedLocales,
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
-      home: CitiesScreen(),
+      home: const CitiesScreen(),
     );
   }
 }

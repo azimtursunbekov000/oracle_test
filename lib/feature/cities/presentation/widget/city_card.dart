@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:oracle_test/feature/cities/data/export.dart';
+import 'package:oracle_test/internal/constants/app_texts.dart';
 
 class CityCard extends StatelessWidget {
   final CityModel city;
@@ -21,14 +22,11 @@ class CityCard extends StatelessWidget {
       child: ListTile(
         title: Text(
           city.name,
-          style: const TextStyle(
-            fontWeight: FontWeight.bold,
-            fontSize: 18,
-          ),
+          style: AppTexts.poppinsMedium18,
         ),
         subtitle: Text(
           city.slug,
-          style: const TextStyle(color: Colors.grey),
+          style: AppTexts.poppins16w400,
         ),
         onTap: () {},
       ),

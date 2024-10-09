@@ -6,6 +6,7 @@ import 'package:oracle_test/feature/cities/presentation/logic/provider_repositor
 import 'package:oracle_test/feature/cities/presentation/widget/search_widget.dart';
 
 import '../../../../internal/constants/export.dart';
+import '../../../../internal/utils/localization/generated/l10n.dart';
 
 class CitiesScreen extends HookConsumerWidget {
   const CitiesScreen({super.key});
@@ -19,12 +20,9 @@ class CitiesScreen extends HookConsumerWidget {
       appBar: AppBar(
         backgroundColor: AppColors.white,
         centerTitle: true,
-        title: const Text(
-          'Города',
-          style: TextStyle(
-            fontWeight: FontWeight.bold,
-            fontSize: 24,
-          ),
+        title: Text(
+          S.of(context).cities,
+          style: AppTexts.poppins24Bold,
         ),
       ),
       body: Container(
