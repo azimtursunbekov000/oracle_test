@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:oracle_test/feature/cities/data/export.dart';
-import 'package:oracle_test/feature/cities/presentation/export.dart';
+
+import '../../data/models/city_model.dart';
+import '../export.dart';
 
 class CitiesList extends StatelessWidget {
   final AsyncValue<List<CityModel>> citiesAsyncValue;

@@ -21,6 +21,7 @@ dependencies:
   shared_preferences: ^2.0.12
   hooks_riverpod: ^2.2.0
   connectivity_plus: ^6.0.5
+  riverpod_annotation: ^1.2.1
 
 dev_dependencies:
   build_runner: ^2.0.0

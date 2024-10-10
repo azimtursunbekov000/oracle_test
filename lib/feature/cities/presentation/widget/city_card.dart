@@ -1,14 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:oracle_test/feature/cities/data/export.dart';
-import 'package:oracle_test/internal/constants/app_texts.dart';
 
 class CityCard extends StatelessWidget {
   final CityModel city;
 
-  const CityCard({
-    super.key,
-    required this.city,
-  });
+  const CityCard({super.key, required this.city});
 
   @override
   Widget build(BuildContext context) {
@@ -22,11 +18,14 @@ class CityCard extends StatelessWidget {
       child: ListTile(
         title: Text(
           city.name,
-          style: AppTexts.poppinsMedium18,
+          style: const TextStyle(
+            fontWeight: FontWeight.bold,
+            fontSize: 18,
+          ),
         ),
         subtitle: Text(
           city.slug,
-          style: AppTexts.poppins16w400,
+          style: const TextStyle(color: Colors.grey),
         ),
         onTap: () {},
       ),

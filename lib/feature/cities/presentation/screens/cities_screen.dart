@@ -1,19 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:oracle_test/feature/cities/presentation/export.dart';
-import 'package:oracle_test/feature/cities/presentation/logic/provider_repository.dart';
 import 'package:oracle_test/feature/cities/presentation/widget/search_widget.dart';
 
 import '../../../../internal/constants/export.dart';
 import '../../../../internal/utils/localization/generated/l10n.dart';
+import '../logic/provider_impl.dart';
+import '../widget/cities_list.dart';
 
 class CitiesScreen extends HookConsumerWidget {
   const CitiesScreen({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final citiesAsyncValue = ref.watch(citiesProvider);
+    final citiesAsyncValue = ref.watch(cityNotifierProvider);
     final searchQuery = useState('');
 
     return Scaffold(
@@ -40,10 +40,10 @@ class CitiesScreen extends HookConsumerWidget {
               onChanged: (value) {
                 searchQuery.value = value;
                 if (value.isNotEmpty) {
-                  ref.read(citiesProvider.notifier).searchCities(value);
+                  ref.read(cityNotifierProvider.notifier).searchCities(value);
                 } else {
                   ref
-                      .read(citiesProvider.notifier)
+                      .read(cityNotifierProvider.notifier)
                       .loadCitiesFromLocalStorage();
                 }
               },
